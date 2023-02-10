@@ -1,17 +1,17 @@
-#Faccio una lista di tutti i database per controllare se il mio esiste
+#Faccio una lista di tutte le tabelle nel mio database
 
 import mysql.connector
 
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password=""
+  password="",
+  database="mydatabase"
 )
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SHOW DATABASES")
+mycursor.execute("SHOW TABLES")
 
 for x in mycursor:
   print(x)
-

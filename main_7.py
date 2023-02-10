@@ -1,4 +1,4 @@
-#Faccio una lista di tutti i database per controllare se il mio esiste
+#Creo una chiave primaria in una tabella già esistente (costumer)
 
 import mysql.connector
 
@@ -12,6 +12,4 @@ mycursor = mydb.cursor()
 
 mycursor.execute("SHOW DATABASES")
 
-for x in mycursor:
-  print(x)
-
+mycursor.execute("ALTER TABLE customer ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")b
